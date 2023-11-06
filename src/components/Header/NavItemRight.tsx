@@ -10,7 +10,7 @@ const NavItemRight: React.FC<Props> = ({
     item: {icon}
 }) => {
     return (
-        <div className="w-[40px] h-[40px] bg-bg rounded-full flex items-center justify-center">
+        <div className="w-[36px] h-[36px] bg-bg rounded-full flex items-center justify-center">
             {icon}
         </div>
     )

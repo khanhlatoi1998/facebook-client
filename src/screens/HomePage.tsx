@@ -9,7 +9,7 @@ const HomePage = () => {
         {
             link: '/profile',
             label: 'Quoc Khanh',
-            icon: <img className="rouded-full w-[40px] h-[40px] object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSngDLxVdX-4fhpWyG8hDPxUWyGV1B9uOXJ3Q&usqp=CAU" alt="" />
+            icon: <img className="rouded-full w-[36px] h-[36px] object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSngDLxVdX-4fhpWyG8hDPxUWyGV1B9uOXJ3Q&usqp=CAU" alt="" />
 
         },
         {
@@ -62,19 +62,18 @@ const HomePage = () => {
             label: 'Trang',
             icon: <img src="./images/img_04.png" alt="" />
         },
-
     ];
 
     return (
-        <main className="">
+        <main className="overflow-x-scroll">
             <div className="pl-4 pt-6 flex relative items-start">
-                <div className="sticky top-[65px] hiddenScroll border-b border-solid pb-2 border-gray-300 max-h-[100vh]  max-w-sidebar min-w-sidebar basis-sidebar">
+                <div className="sticky top-[65px] hiddenScroll border-b border-solid pb-2 border-gray-300 max-h-[100vh] sidebar">
                     <SidebarHome items={items} />
                 </div>
-                <div className="bg-[blue] flex-1">
+                <div className="flex-1">
                     <Feed />
                 </div>
-                <div className="bg-[red] max-w-sidebar min-w-sidebar basis-sidebar">
+                <div className="bg-[red] widgets">
                     <Widgets />
                 </div>
             </div>

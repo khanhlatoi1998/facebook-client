@@ -53,7 +53,7 @@ const Header = () => {
         {
             link: '',
             icon: <figure>
-                <img className="rouded-full w-[40px] h-[40px] object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSngDLxVdX-4fhpWyG8hDPxUWyGV1B9uOXJ3Q&usqp=CAU" alt="" />
+                <img className="rouded-full w-[36px] h-[36px] object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSngDLxVdX-4fhpWyG8hDPxUWyGV1B9uOXJ3Q&usqp=CAU" alt="" />
             </figure>
         },
     ] 

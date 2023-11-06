@@ -1,8 +1,14 @@
 import React from 'react';
 
+
 import './style/global.scss'
 import './style/custom.scss';
 import './style/loading.scss';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './screens/HomePage';
