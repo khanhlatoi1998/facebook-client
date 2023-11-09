@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import ItemStory from "../ItemStory";
 import { data } from "./data";
 
@@ -8,41 +8,42 @@ const Stories = () => {
     const prevRef = useRef<any>(null);
     const nextRef = useRef<any>(null);
     const [translate, setTranslate] = useState<number>(0);
-    const [first, setFirst] = useState<number>(0);
+    const [count, setCount] = useState<number>(0);
     const widthItem = 141;
     const marginRight = 8;
 
     const handlePrev = () => {
         const widthContainer = groupRef.current.offsetWidth;
-        const numberShowItem = Math.floor(groupRef.current.offsetWidth / 141);
+        const numberShowItem = Math.floor(groupRef.current.offsetWidth / (141 + marginRight));
         const widthItemMissing = widthContainer - (widthItem * numberShowItem);
-        if (first === 1) {
+        if (count === 1) {
             let numberTranslate = widthContainer - widthItemMissing - marginRight;
             groupRef.current.style.transform = `translateX(-${translate - numberTranslate}px)`;
             setTranslate(translate - numberTranslate);
-            setFirst(first - 1);
+            setCount(count - 1);
             prevRef.current.style.display = 'none';
 
         } else {
-            setFirst(first - 1);
+            setCount(count - 1);
             let numberTranslate = (widthItem * numberShowItem) + (marginRight * numberShowItem);
             groupRef.current.style.transform = `translateX(-${translate - numberTranslate}px)`;
             setTranslate(translate - numberTranslate);
         }
+        nextRef.current.style.display = 'flex';
     };
 
     const handleNext = () => {
         const widthContainer = groupRef.current.offsetWidth;
         const numberShowItem = Math.floor(groupRef.current.offsetWidth / 141);
         const widthItemMissing = widthContainer - (widthItem * numberShowItem);
-        console.log(first)
-        if (first === 0) {
-            setFirst(first + 1);
+        const widthAllItem = ((data.length + 1) * widthItem) + ((data.length + 1) * marginRight);
+        if (count === 0) {
+            setCount(count + 1);
             let numberTranslate = widthContainer - widthItemMissing - marginRight;
             groupRef.current.style.transform = `translateX(-${translate + numberTranslate}px)`;
             setTranslate(translate + numberTranslate);
         } else {
-            setFirst(first + 1);
+            setCount(count + 1);
             let numberTranslate = (widthItem * numberShowItem) + (marginRight * numberShowItem);
             groupRef.current.style.transform = `translateX(-${translate + numberTranslate}px)`;
             setTranslate(translate + numberTranslate);
@@ -50,10 +51,20 @@ const Stories = () => {
         prevRef.current.style.display = 'flex';
     };
 
+    useEffect(() => {
+        const widthContainer = groupRef.current.offsetWidth;
+        const widthAllItem = ((data.length + 1) * widthItem) + ((data.length + 1) * marginRight);
+        if ((widthAllItem - widthContainer - translate) > 0) {
+            nextRef.current.style.display = 'flex';
+        } else {
+            nextRef.current.style.display = 'none';
+        }
+    }, [translate])
+
 
     return (
-        <div className="relative">
-            <div className="h-[250px] flex relative grow-1 no-scrollbar transition" ref={groupRef}>
+        <div className="relative w-full overflow-x-scroll no-scrollbar">
+            <div className="h-[250px] flex relative grow-1 transition" ref={groupRef}>
                 <div className="group  cursor-pointer h-full  grow-0 shrink-0 basis-[141px] mr-[8px] pb-1 rounded-lg bg-white overflow-hidden relative flex flex-col items-center justify-between shadow-component">
                     <figure className="">
                         <img className="h-[205px] object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnmwWQIrVvOza5_9GSFKoc4yGyeW63v5MTwg&usqp=CAU" alt="" />

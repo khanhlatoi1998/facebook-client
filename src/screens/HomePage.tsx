@@ -65,12 +65,12 @@ const HomePage = () => {
     ];
 
     return (
-        <main className="overflow-x-scroll">
+        <main className="overflow-x-hidden">
             <div className="pl-4 pt-6 flex relative items-start">
                 <div className="sticky top-[65px] hiddenScroll border-b border-solid pb-2 border-gray-300 max-h-[100vh] sidebar">
                     <SidebarHome items={items} />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 overflow-hidden">
                     <Feed />
                 </div>
                 <div className="bg-[red] widgets">

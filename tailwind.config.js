@@ -36,7 +36,7 @@ module.exports = {
                 'sidebar': '280px',
             },
             borderColor: {
-                border: '#ffffff54'
+                border: '#0000001f'
             },
             padding: {
                 header: '103px'
@@ -45,7 +45,7 @@ module.exports = {
                 'sidebar': '360px'
             },
             boxShadow: {
-                'component': "0 0 2px 1px #0000001c",
+                'component': "0 1px 2px 1px #0000001c",
                 'header': "1px 0 10px 1px #0000001c",
                 'around': "0 0 10px 0 rgb(0 0 0 / 12%)",
             },
