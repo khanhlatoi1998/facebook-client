@@ -65,19 +65,19 @@ const HomePage = () => {
     ];
 
     return (
-        <main className="overflow-x-hidden">
+        <div className="relative">
             <div className="pl-4 pt-6 flex relative items-start">
-                <div className="sticky top-[65px] hiddenScroll border-b border-solid pb-2 border-gray-300 max-h-[100vh] sidebar">
+                <div className="sticky top-[80px] hiddenScroll border-b border-solid border-gray-300 max-h-[90vh] sidebar pb-4">
                     <SidebarHome items={items} />
                 </div>
-                <div className="flex-1 overflow-hidden">
+                <div className="flex-1 overflow-hidden px-12">
                     <Feed />
                 </div>
-                <div className="bg-[red] widgets">
+                <div className="sticky top-[80px] hiddenScroll h-[90vh] sidebar">
                     <Widgets />
                 </div>
             </div>
-        </main>
+        </div>
     )
 };
 

@@ -8,13 +8,15 @@ const Feed = () => {
         <div className="lg:max-w-[680px] mx-auto pb-7">
             <Stories />
             <Post />
-            {
-                Array(4).fill('a').map((item: any, idx: number) => {
-                    return (
-                        <ItemFeed key={idx}/>
-                    )
-                })
-            }
+            <div className="flex flex-col gap-6">
+                {
+                    Array(4).fill('a').map((item: any, idx: number) => {
+                        return (
+                            <ItemFeed key={idx} />
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 };

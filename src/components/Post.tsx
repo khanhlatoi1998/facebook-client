@@ -23,6 +23,19 @@ const Post = () => {
                     </button>
                 </div>
             </div>
+            <div className="bg-[#ffffff96] fixed top-0 left-0 right-0 bottom-0 z-[900] flex items-center justify-center">
+                <div className="w-1/3 xl:w-1/4 bg-white rounded-md shadow-xl">
+                    <div className="p-4 border-b border-solid border-border relative">
+                        <p className="font-medium lg:text-title-lg-2 flex justify-center">Tạo bài viết</p>
+                        <span className="w-[40px] h-[40px] bg-bg rounded-full flex items-center justify-center absolute right-3 top-[50%] translate-y-[-50%]">
+                            <i className="fa-solid fa-xmark text-[20px]"></i>
+                        </span>
+                    </div>
+                    <div className="p-2">
+
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
